@@ -13,3 +13,4 @@ R | Completely reset the canvas
 Z | Delete the latest point
 P | Print the points normalised to the screen size
 F | Print the normalised points, but flipped vertically
+J | Print the normalised points, but with x and y each on their own list

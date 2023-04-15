@@ -6,6 +6,7 @@
 # Use Z to delete the latest point
 # Use P to print the points normalised to the screen size
 # Use F to print the normalised points, but flipped vertically
+# Use J to print the normalised points, but with x and y each on their own list
 
 # I love pygame !!
 import pygame
@@ -36,6 +37,18 @@ def normalise(pts, flip: bool = False):
                 new_ls.append((x/w, 1 - y/h))
 
         ret.append(new_ls)
+
+    return ret
+
+
+def separate_xy(pts):
+    """Returns the list with xs and ys in the same lists. This is useful for
+    drawing polygons with the ecs100 library.
+    [[(0,1), (2,3)], [(4,5), (6,7)]] -> [[[0, 2],[1, 3]],[[4, 6],[5, 7]]]"""
+    ret = []
+
+    for ls in pts:
+        ret.append(list(map(list, zip(*ls))))
 
     return ret
 
@@ -88,8 +101,13 @@ def main():
                     print(normalise(pts, flip=False))
 
                 # print points normalised but flipped on the y axis
+                # This produces "normal" coordinates
                 elif e.key == pygame.K_f:
                     print(normalise(pts, flip=True))
+
+                # Separate xs and ys into their own lists inside each group
+                elif e.key == pygame.K_j:
+                    print(separate_xy(normalise(pts)))
 
         screen.fill(0xffffff)
 
