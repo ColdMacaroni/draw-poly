@@ -32,9 +32,9 @@ def normalise(pts, flip: bool = False):
         new_ls = []
         for (x, y) in ls:
             if flip:
-                new_ls.append((x/w, y/h))
-            else:
                 new_ls.append((x/w, 1 - y/h))
+            else:
+                new_ls.append((x/w, y/h))
 
         ret.append(new_ls)
 
