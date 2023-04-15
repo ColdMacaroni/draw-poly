@@ -5,9 +5,11 @@ A Pygame program to draw polys and get their points
 ## Controls
 
 Key | Action
-:---:|:---:
-A | add a point
-Space | add the final point in a group, starting a new one
-C | delete the latest group and go back to the previous one
-Z | delete the latest point
-P | print the points normalised to the screen size
+:---:|:---
+A | Add a point
+Space | Add the final point in a group, starting a new one
+C | Delete the latest group and go back to the previous one
+R | Completely reset the canvas
+Z | Delete the latest point
+P | Print the points normalised to the screen size
+F | Print the normalised points, but flipped vertically

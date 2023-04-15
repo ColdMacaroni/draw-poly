@@ -2,8 +2,10 @@
 # Use A to add a point
 # Use Space to add the final point in a group, starting a new one.
 # Use C to delete the latest group and go back to the previous one
+# Use R to completely reset the canvas
 # Use Z to delete the latest point
 # Use P to print the points normalised to the screen size
+# Use F to print the normalised points, but flipped vertically
 
 # I love pygame !!
 import pygame
