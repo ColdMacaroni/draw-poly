@@ -30,11 +30,11 @@ def normalise(pts, flip: bool = False):
             continue
 
         new_ls = []
-        for (x, y) in ls:
+        for x, y in ls:
             if flip:
-                new_ls.append((x/w, 1 - y/h))
+                new_ls.append((x / w, 1 - y / h))
             else:
-                new_ls.append((x/w, y/h))
+                new_ls.append((x / w, y / h))
 
         ret.append(new_ls)
 
@@ -109,7 +109,7 @@ def main():
                 elif e.key == pygame.K_j:
                     print(separate_xy(normalise(pts)))
 
-        screen.fill(0xffffff)
+        screen.fill(0xFFFFFF)
 
         for idx in range(len(pts)):
             # This is inefficient. Too bad!
